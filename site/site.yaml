@@ -1,0 +1,82 @@
+schema_version: "1.0"
+status: "draft"
+site_id: "bright-velo-concept-l0"
+project: "Bright Velo local L0 concept"
+confirmed_by: "待客户确认"
+confirmed_at: null
+no_secret_values: true
+server:
+  reference: "not-configured-local-only"
+  owner: "待确认"
+environments:
+  preview:
+    enabled: true
+    public_url: "not-configured-local-preview"
+    admin_path: null
+  production:
+    enabled: false
+    public_url: "not-configured"
+    admin_path: null
+repository:
+  repo_url: "not-configured"
+  approved_branch: "not-configured"
+  production_branch: "main"
+  commit_sha_required: true
+architecture: "static"
+toolchain:
+  node: ">=20.9.0"
+  pnpm_major: "10"
+  package_manager: "pnpm@10.17.0"
+  lockfile: "pnpm-lock.yaml"
+  payload_version: null
+runtime:
+  app_port_reference: "local-vite-dev-server"
+  health_port_reference: null
+deployment:
+  mechanism: "local"
+  call_carrier: "local-vite"
+  forced_command_reference: null
+  allowed_modes: ["local-l0"]
+  guide_reference: "CURRENT_STATUS.md"
+  production_approval_required: true
+  authorization_reference: "User request: 我们帮他做一个精美的网站出来"
+  deploy_owner: null
+  validate_required: "not-applicable"
+  status_required: true
+  eli_preview_exception: false
+storage:
+  code_reference: "local-workspace-only"
+  releases_reference: "not-configured"
+  database_reference: "not-applicable"
+  media_reference: "CSS-only-original-placeholders"
+database:
+  type: "other"
+  credential_secret_ref: "not-applicable"
+  business_data_in_file: false
+media:
+  credential_secret_ref: null
+  managed_separately_from_code: true
+roles:
+  owner: "Bright Velo / 待确认"
+  developer: "Codex"
+  server_owner: "not-configured"
+migration:
+  required: false
+  required_for_localization: true
+  procedure_reference: "not-applicable"
+  production_approval_required: true
+backup:
+  procedure_reference: "not-applicable-l0-local-only"
+  database_and_media_separate: true
+  restore_rehearsal_required: true
+release_retention:
+  policy_reference: "not-configured"
+  previous_accepted_release_required: true
+health_checks:
+  public_page: "local-vite-render"
+  application: "not-applicable"
+  admin: null
+  api: null
+rollback:
+  procedure_reference: "discard-local-draft-only-with-user-approval"
+  explicit_authorization_required: true
